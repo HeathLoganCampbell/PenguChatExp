@@ -1,5 +1,9 @@
 const app = new PIXI.Application();
-await app.init({ width: 640, height: 360 })
+await app.init({  
+    width: window.innerWidth, 
+    height: window.innerHeight, 
+    autoResize: true  
+})
 document.body.appendChild(app.canvas);
 
 
@@ -24,6 +28,6 @@ app.view.addEventListener('click', (event) => {
 app.ticker.add((ticker) => {
     elapsed += ticker.deltaTime;
 
-    sprite.x += (targetX - sprite.x) * 0.01;  
-    sprite.y += (targetY - sprite.y) * 0.01;  
+    sprite.x += (targetX - sprite.x) * 0.05;  
+    sprite.y += (targetY - sprite.y) * 0.05;  
 });
